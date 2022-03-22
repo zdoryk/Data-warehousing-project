@@ -80,7 +80,22 @@ go
 
 ```
 
+**Here's snippet of inserts to DB (you can find all data in "data.zip)":**
+``` SQL
+INSERT INTO crashes.dbo.weather (weather_id, weather_type) VALUES (1, N'unknown');
+INSERT INTO crashes.dbo.weather (weather_id, weather_type) VALUES (2, N'fine');
+INSERT INTO crashes.dbo.weather (weather_id, weather_type) VALUES (3, N'rain');
+INSERT INTO crashes.dbo.weather (weather_id, weather_type) VALUES (4, N'fog');
+INSERT INTO crashes.dbo.weather (weather_id, weather_type) VALUES (6, N'smoke_dust');
+INSERT INTO crashes.dbo.weather (weather_id, weather_type) VALUES (8, N'high_wind');
+```
+
 ### Visualize user questions from phase 1, perform analysis of these questions.
+
+![image](https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png)
+
+For data visualization - I used "Tableau". I've used this tool because it's quite simple in usage, I've never used BI tools before and saw an opportunity to learn something new, plus with "Tableau" I can simply connect to any RDBMS, read almost every text file, this software is popular and many companies want their employees to know at least one of BI tools. So there were many reasons to choose "Tableau".
+
 
 
 
