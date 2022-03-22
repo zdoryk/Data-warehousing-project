@@ -1,4 +1,7 @@
 # Data-warehousing-project
+## Main goal of this project
+Choosen data set includes over 300,000 accidents in Australia in 2006-2019. Using this data, we can find many interesting statistics, e.g. depending on the year/month/day of the week in which more accidents occur in Australia. How the number of accidents depends on the weather, holidays or weekends. How the severity of accidents depends on the weather, etc.
+___
 I worked on this project from October 2021 to February 2022 in the "Data warehousing design" class. This project was divided into 3 phases:
 -	Data warehouse model.
 -	Data warehouse implementation.
@@ -95,6 +98,8 @@ INSERT INTO crashes.dbo.weather (weather_id, weather_type) VALUES (8, N'high_win
 ![image](https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png)
 
 For data visualization - I used "Tableau". I've used this tool because it's quite simple in usage, I've never used BI tools before and saw an opportunity to learn something new, plus with "Tableau" I can simply connect to any RDBMS, read almost every text file, this software is popular and many companies want their employees to know at least one of BI tools. So there were many reasons to choose "Tableau".
+
+__All visualizations and their analysations are in the file "Analysed.pdf"__
 
 
 
