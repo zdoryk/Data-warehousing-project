@@ -1,4 +1,7 @@
 # Data-warehousing-project
+## Main goal of this project
+Choosen data set includes over 300,000 accidents in Australia in 2006-2019. Using this data, we can find many interesting statistics, e.g. depending on the year/month/day of the week in which more accidents occur in Australia. How the number of accidents depends on the weather, holidays or weekends. How the severity of accidents depends on the weather, etc.
+___
 I worked on this project from October 2021 to February 2022 in the "Data warehousing design" class. This project was divided into 3 phases:
 -	Data warehouse model.
 -	Data warehouse implementation.
@@ -43,6 +46,63 @@ As you can see, all these questions have the same time interval, because at the 
 
 ## Data warehouse implementation.
 The second phase was much more interesting! I love implementing things and I love implementing DB diagrams into real databases. In this case, my DB was a Data Warehouse and that was really intriguing.
+
+So there are my main goals for this phase:
+- Implement Data Warehouse.
+- Visualize user questions from phase 1, perform analysis of these questions.
+- Make some conclusions.
+
+In addition to these main goals, I have done additional work, which will be discussed in the future.
+
+### Data Warehouse implementation
+
+In order to perform the analysis, I first imported the data from the kaggle.com file into __SQL Server__. I divided data into tables according to the refactored model:
+
+![image](https://user-images.githubusercontent.com/63752476/159523336-9fc2b04d-2e9c-4c75-91ab-8a1ad9cc75e8.png)
+
+Database creation script snippet below (you also can find entire this script in the DB_setup.sql file).
+
+``` SQL
+if exists(select 1 from master.dbo.sysdatabases where name = 'crashes') drop database crashes
+GO
+CREATE DATABASE crashes
+GO
+
+create table severity
+(
+    severity_id   tinyint     not null
+        constraint severity_temp_pk
+            primary key nonclustered,
+    severity_type varchar(15) not null
+)
+go
+
+create unique index severity_temp_severity_id_uindex
+    on severity (severity_id)
+go
+
+```
+
+**Here's snippet of inserts to DB (you can find all data in "data.zip)":**
+``` SQL
+INSERT INTO crashes.dbo.weather (weather_id, weather_type) VALUES (1, N'unknown');
+INSERT INTO crashes.dbo.weather (weather_id, weather_type) VALUES (2, N'fine');
+INSERT INTO crashes.dbo.weather (weather_id, weather_type) VALUES (3, N'rain');
+INSERT INTO crashes.dbo.weather (weather_id, weather_type) VALUES (4, N'fog');
+INSERT INTO crashes.dbo.weather (weather_id, weather_type) VALUES (6, N'smoke_dust');
+INSERT INTO crashes.dbo.weather (weather_id, weather_type) VALUES (8, N'high_wind');
+```
+
+### Visualize user questions from phase 1, perform analysis of these questions.
+
+![image](https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png)
+
+For data visualization - I used "Tableau". I've used this tool because it's quite simple in usage, I've never used BI tools before and saw an opportunity to learn something new, plus with "Tableau" I can simply connect to any RDBMS, read almost every text file, this software is popular and many companies want their employees to know at least one of BI tools. So there were many reasons to choose "Tableau".
+
+__All visualizations and their analysations are in the file "Analysed.pdf"__
+
+
+
 
 
 
