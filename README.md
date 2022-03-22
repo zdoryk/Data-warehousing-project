@@ -46,16 +46,44 @@ The second phase was much more interesting! I love implementing things and I lov
 
 So there are my main goals for this phase:
 - Implement Data Warehouse.
-- Implement user questions from phase 1.
-- Perform analysis of these questions.
+- Visualize user questions from phase 1, perform analysis of these questions.
 - Make some conclusions.
 
 In addition to these main goals, I have done additional work, which will be discussed in the future.
 
 ### Data Warehouse implementation
 
-In order to perform the analysis, I first imported the data from the kaggle.com file into SQL Server. I divided data into tables according to the model from the section entitled Entire data sharing script below (you also can find this script().
+In order to perform the analysis, I first imported the data from the kaggle.com file into __SQL Server__. I divided data into tables according to the refactored model:
 
 ![image](https://user-images.githubusercontent.com/63752476/159523336-9fc2b04d-2e9c-4c75-91ab-8a1ad9cc75e8.png)
+
+Database creation script snippet below (you also can find entire this script in the DB_setup.sql file).
+
+``` SQL
+if exists(select 1 from master.dbo.sysdatabases where name = 'crashes') drop database crashes
+GO
+CREATE DATABASE crashes
+GO
+
+create table severity
+(
+    severity_id   tinyint     not null
+        constraint severity_temp_pk
+            primary key nonclustered,
+    severity_type varchar(15) not null
+)
+go
+
+create unique index severity_temp_severity_id_uindex
+    on severity (severity_id)
+go
+
+```
+
+### Visualize user questions from phase 1, perform analysis of these questions.
+
+
+
+
 
 
