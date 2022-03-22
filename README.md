@@ -44,6 +44,18 @@ As you can see, all these questions have the same time interval, because at the 
 ## Data warehouse implementation.
 The second phase was much more interesting! I love implementing things and I love implementing DB diagrams into real databases. In this case, my DB was a Data Warehouse and that was really intriguing.
 
+So there are my main goals for this phase:
+- Implement Data Warehouse.
+- Implement user questions from phase 1.
+- Perform analysis of these questions.
+- Make some conclusions.
 
+In addition to these main goals, I have done additional work, which will be discussed in the future.
+
+### Data Warehouse implementation
+
+In order to perform the analysis, I first imported the data from the kaggle.com file into SQL Server. I divided data into tables according to the model from the section entitled Entire data sharing script below (you also can find this script().
+
+![image](https://user-images.githubusercontent.com/63752476/159523336-9fc2b04d-2e9c-4c75-91ab-8a1ad9cc75e8.png)
 
 
