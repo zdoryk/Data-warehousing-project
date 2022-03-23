@@ -100,7 +100,7 @@ INSERT INTO crashes.dbo.weather (weather_id, weather_type) VALUES (8, N'high_win
 For data visualization - I used "Tableau". I've used this tool because it's quite simple in usage, I've never used BI tools before and saw an opportunity to learn something new, plus with "Tableau" I can simply connect to any RDBMS, read almost every text file, this software is popular and many companies want their employees to know at least one of BI tools. So there were many reasons to choose "Tableau".
 
 __All visualizations and their analysations are in the file "Analysed.pdf"__
-
+> This report is writen in polish
 
 
 
