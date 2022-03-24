@@ -49,8 +49,7 @@ The second phase was much more interesting! I love implementing things and I lov
 
 So there are my main goals for this phase:
 - Implement Data Warehouse.
-- Visualize user questions from phase 1, perform analysis of these questions.
-- Make some conclusions.
+- Visualize user questions from phase 1, perform analysis of these questions and make some conclusions.
 
 In addition to these main goals, I have done additional work, which will be discussed in the future.
 
@@ -101,6 +100,86 @@ For data visualization - I used "Tableau". I've used this tool because it's quit
 
 __All visualizations and their analysations are in the file "Analysed.pdf"__
 > This report is writen in polish
+
+## Data warehouse exploration.
+
+![uawj2cfy3tbl-corporate_full_color](https://user-images.githubusercontent.com/63752476/159866598-b4bae19b-69d2-4883-9833-80f3e499a49c.png)
+
+I have heard about the "RapidMiner" for a long time. From a friend who works in data science at a mid-position, on forums, in videos - that's why my choice fell on him. I was just interested in trying a program designed for data science.
+
+When I open the program for first time - I couldn't understand what I need to click to do something useful. Then I googled, read some information, watched some videos from an official account of RapidMiner on YouTube, and made my first data preparation and data exploration using data science tool. 
+
+I can divide this whole process into 3 phases:
+1. Connect to and read database.
+2. Prepare data.
+3. Make a data exploration.
+
+### Connect to and read database.
+
+I connected to a database with an inbuilt JAR driver.
+<br/>In RapidMIner you can create folders with processes, so I divided 3 processes above into 2 folders.
+
+In RapidMIner you can create folders with processes, so I divided the 3 processes above into 2 folders. In RapidMiner we can do everything using "Drag and drop", and the database reading process uses only one "tile" so I joined database reading and data preparation processes in one folder.
+
+### Prepare data.
+
+Then I tried to make my first data preparation. I tried to read all crashes without weather conditions and with pedestrians' participation. For this I read all the crashes from DB:
+``` SQL
+SELECT  "dbo"."date_time"."day_of_week" AS "dbo.date_time__day_of_week", "dbo"."intersection"."isIntersection" AS "dbo.intersection__isIntersection", "dbo"."pedestrian"."is_pedestrian" AS "dbo.pedestrian__is_pedestrian", "dbo"."severity"."severity_type" AS "dbo.severity__severity_type"
+FROM "dbo"."date_time", "dbo"."intersection", "dbo"."pedestrian", "dbo"."severity"
+```
+
+Then I used from standard RapidMiner FIlter.
+
+![image](https://user-images.githubusercontent.com/63752476/159872906-ea09401e-b683-42f9-98f5-c1eb7d81d637.png)
+
+I know I could do this filter using SQL query with a where clause, but my main goal of using RapidMiner was to learn as much as I can learn while I was doing this project.
+
+Full process looks like this:
+
+![image](https://user-images.githubusercontent.com/63752476/159873935-bcc10bc0-eca0-4d7f-9795-d87369dd5818.png)
+
+Then i tried something more complicated:
+
+![image](https://user-images.githubusercontent.com/63752476/159875786-cab519a3-866b-49e3-99a1-b6481965d19a.png)
+
+There firstly I read all crash and weather rows. Then I filtered all weather rows with weather type=unknown. And joined these 2 tables. 
+<br/>Then I read date_time and lat_long tables:
+ ```SQL
+--date_time
+SELECT "date_time_id", "month"
+FROM "dbo"."date_time"
+
+--lat_long
+SELECT "lat_long", "state"
+FROM "dbo"."location"
+```
+
+After executing this process, we see something like this:
+
+![image](https://user-images.githubusercontent.com/63752476/159876827-8a3263b2-05af-4639-8622-74a5229ee002.png)
+
+I created some processes for my needs in this project, but I think it's no need to explain them, they are similar to the one above.
+
+### Make a data exploration.
+
+In this phase i understood, that dataset that i choosed isn't good. I saw that in 2010-2013 there are so many records that they amount prevents me from do a lot of stuff, for example time series forcasting. 
+
+![image](https://user-images.githubusercontent.com/63752476/159879203-3169d3aa-50b7-423e-b352-255443b03144.png)
+
+As you can see, it's not normal and I think that it can't be in real life. 
+<br/>Another example:
+
+![image](https://user-images.githubusercontent.com/63752476/159880679-cb0c7548-691c-418a-a87d-9949fc321503.png)
+
+So i tried to avoid cases like these.
+Now I can show you processes from the second folder with did data exploration.
+
+
+
+
+
+
 
 
 
