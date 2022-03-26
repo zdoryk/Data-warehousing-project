@@ -175,6 +175,27 @@ As you can see, it's not normal and I think that it can't be in real life.
 So i tried to avoid cases like these.
 Now I can show you processes from the second folder with did data exploration.
 
+I used 4 similar processes for data exploration, so I show you only one of them. 
+
+![image](https://user-images.githubusercontent.com/63752476/160248537-7f19411a-2d3e-470d-9184-28d854d6aaf3.png)
+
+<br/>First tile in this process is data process that I put above. Next tile it's an attribute seleciton, where I selected this attributes:
+
+![image](https://user-images.githubusercontent.com/63752476/160249098-dfd3a159-09ea-45e5-8449-5b455746f17f.png)
+
+Then I needed to select main attribute(in this case "state"), cause I choosed random forest algorithm for data exploration. 
+<br/>Next tile is Random Forest algorithm settings.
+Now I can show you results:
+
+![image](https://user-images.githubusercontent.com/63752476/160249392-8014f3bd-2286-4e09-b1ce-b1d36c54a123.png)
+
+From the visualization we can say that the most important is weather_type.
+<br/>We also can see one of 50 trees:
+
+![image](https://user-images.githubusercontent.com/63752476/160249459-6b333d7f-c45e-4244-8851-605be6285a3d.png)
+
+You can see entire data exploration process in 
+
 
 
 
