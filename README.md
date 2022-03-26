@@ -194,7 +194,7 @@ From the visualization we can say that the most important is weather_type.
 
 ![image](https://user-images.githubusercontent.com/63752476/160249459-6b333d7f-c45e-4244-8851-605be6285a3d.png)
 
-You can see entire data exploration process in 
+You can see entire data exploration process in Data_exploration.pdf.
 
 
 
